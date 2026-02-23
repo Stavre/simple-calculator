@@ -1,4 +1,4 @@
-name: basic check
+name: basic_check
 on:
   pull_request:
     branches:
@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 jobs:
   build:
+    name: basic_check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
