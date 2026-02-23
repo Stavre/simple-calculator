@@ -28,7 +28,7 @@ jobs:
       - name: run pmd test
         run: ./gradlew pmdTest
       - name: build with gradle
-        run: ./gradlew buil
+        run: ./gradlew build
 
       
       
