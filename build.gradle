@@ -37,7 +37,6 @@ test {
 checkstyle {
     toolVersion = "13.2.0"
     ignoreFailures = false
-    setSourceSets(["src/main/java/com/stavre/calculator"] as Collection<SourceSet>)
     configDirectory = file("${project.rootDir}/checkstyle")
     configFile = file("${project.rootDir}/checkstyle/checkstyle.xml")
 }
