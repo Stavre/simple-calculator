@@ -4,6 +4,17 @@ This project uses the shunting yard algorithm to evaluate simple mathematical ex
 
 ## Project
 
+### How to build
+Run:
+```shell
+./gradlew shadowJar
+```
+
+Then run the jar from /build/libs:
+```shell
+java -jar .\Calculator-1.0-SNAPSHOT-all.jar "3 + 4"
+```
+
 ### Available operations
 - Plus (+)
 - Minus (-)
@@ -20,17 +31,17 @@ Other types, such as boolean or numbers in scientific notation, could be added.
 
 ### Implementation overview
 
-The program is made out of two main components: a tokenizer and a parser
+The program is made out of two main components: a tokenizer and a com.stavre.calculator.parser
 
 #### Tokenizer
 
-Transforms an input string into a series of tokens. 
+Transforms an input string into a series of com.stavre.calculator.tokens. 
 
 #### Parser 
 
-Evaluates a list of tokens and returns the expression's result.
-The parser is made out of a number of states. Each state implements State interface and processes 
-a type of token. The parser decides which state to use depending on the token type.
+Evaluates a list of com.stavre.calculator.tokens and returns the expression's result.
+The com.stavre.calculator.parser is made out of a number of states. Each state implements State interface and processes 
+a type of token. The com.stavre.calculator.parser decides which state to use depending on the token type.
 
 #### Tokens
 
@@ -56,6 +67,8 @@ The following tweaks were made:
 - default severity is error
 - indentation level is 4 whitespaces, not 2
 - disabled mandatory javadocs
+- increased max line length from 100 characters to 120
+- CustomImportOrder.sortImportsInGroupAlphabetically set to false
 
 ### PMD
 Rules used:
