@@ -29,6 +29,8 @@ jobs:
         run: ./gradlew pmdTest
       - name: build with gradle
         run: ./gradlew build
+      - name: run unit tests
+        run: ./gradlew test
 
       
       
