@@ -22,7 +22,7 @@ class ParserTest {
     Parser parser = new Parser();
 
     @Test
-    public void evaluateSimplePlusOperation() {
+    void evaluateSimplePlusOperation() {
         List<Token> tokens = List.of(
                 new NumberToken("2"),
                 new PlusToken(),
@@ -35,7 +35,7 @@ class ParserTest {
     }
 
     @Test
-    public void evaluateSimpleMinusOperation() {
+    void evaluateSimpleMinusOperation() {
         List<Token> tokens = List.of(
                 new NumberToken("2"),
                 new MinusToken(),
@@ -49,7 +49,7 @@ class ParserTest {
     }
 
     @Test
-    public void evaluateSimpleMultiplicationOperation() {
+    void evaluateSimpleMultiplicationOperation() {
         List<Token> tokens = List.of(
                 new NumberToken("2"),
                 new MultiplyToken(),
@@ -63,7 +63,7 @@ class ParserTest {
     }
 
     @Test
-    public void evaluateSimpleDivisionOperation() {
+    void evaluateSimpleDivisionOperation() {
         List<Token> tokens = List.of(
                 new NumberToken("4"),
                 new DivisionToken(),
@@ -77,7 +77,7 @@ class ParserTest {
     }
 
     @Test
-    public void evaluateSimpleDivisionOperationWithFloatingPointResult() {
+    void evaluateSimpleDivisionOperationWithFloatingPointResult() {
         List<Token> tokens = List.of(
                 new NumberToken("1"),
                 new DivisionToken(),
@@ -103,7 +103,7 @@ class ParserTest {
     //    }
 
     @Test
-    public void evaluateSimplePowerOperation() {
+    void evaluateSimplePowerOperation() {
         List<Token> tokens = List.of(
                 new NumberToken("2"),
                 new PowerToken(),
@@ -117,7 +117,7 @@ class ParserTest {
     }
 
     @Test
-    public void evaluateSimpleSquareRootOperation() {
+    void evaluateSimpleSquareRootOperation() {
         List<Token> tokens = List.of(
                 new SquareRootFunction(),
                 new LeftParenthesisToken(),
@@ -132,7 +132,7 @@ class ParserTest {
     }
 
     @Test
-    public void evaluateComplexOperation() {
+    void evaluateComplexOperation() {
         List<Token> tokens = new ArrayList<>();
         tokens.add(new LeftParenthesisToken());
         tokens.add(new SquareRootFunction());
@@ -160,7 +160,7 @@ class ParserTest {
     }
 
     @Test
-    public void evaluateSimplePlusOperationWithFloatingNumbers() {
+    void evaluateSimplePlusOperationWithFloatingNumbers() {
         List<Token> tokens = List.of(
                 new NumberToken("2.0"),
                 new PlusToken(),
@@ -174,7 +174,7 @@ class ParserTest {
     }
 
     @Test
-    public void evaluateSimpleMinusOperationWithFloatingNumbers() {
+    void evaluateSimpleMinusOperationWithFloatingNumbers() {
         List<Token> tokens = List.of(
                 new NumberToken("2.002"),
                 new MinusToken(),
@@ -188,7 +188,7 @@ class ParserTest {
     }
 
     @Test
-    public void evaluateSimpleMultiplicationOperationWithFloatingNumbers() {
+    void evaluateSimpleMultiplicationOperationWithFloatingNumbers() {
         List<Token> tokens = List.of(
                 new NumberToken("2.9008"),
                 new MultiplyToken(),
@@ -227,7 +227,7 @@ class ParserTest {
     //    }
 
     @Test
-    public void evaluateSimpleSquareRootOperationWithFloatingNumbers() {
+    void evaluateSimpleSquareRootOperationWithFloatingNumbers() {
         List<Token> tokens = List.of(
                 new SquareRootFunction(),
                 new LeftParenthesisToken(),

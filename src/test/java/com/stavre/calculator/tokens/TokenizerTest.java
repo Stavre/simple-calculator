@@ -17,28 +17,28 @@ import java.util.List;
 class TokenizerTest {
 
     @Test
-    public void tokenizeNegativeNumber() {
+    void tokenizeNegativeNumber() {
         List<Token> actual = Tokenizer.tokenize("-2");
         List<Token> expected = List.of(new NumberToken("-2"));
         assertThat(actual).usingRecursiveComparison().isEqualTo(expected);
     }
 
     @Test
-    public void tokenizeNegativeFloatingPointNumber() {
+    void tokenizeNegativeFloatingPointNumber() {
         List<Token> actual = Tokenizer.tokenize("-2.002");
         List<Token> expected = List.of(new NumberToken("-2.002"));
         assertThat(actual).usingRecursiveComparison().isEqualTo(expected);
     }
 
     @Test
-    public void tokenizeNegativeFloatingPointNumberLessThan1() {
+    void tokenizeNegativeFloatingPointNumberLessThan1() {
         List<Token> actual = Tokenizer.tokenize("-0.002");
         List<Token> expected = List.of(new NumberToken("-0.002"));
         assertThat(actual).usingRecursiveComparison().isEqualTo(expected);
     }
 
     @Test
-    public void tokenizeSimplePlusOperation() {
+    void tokenizeSimplePlusOperation() {
         List<Token> actual = Tokenizer.tokenize("2 + 4");
         List<Token> expected = List.of(
                 new NumberToken("2"),
@@ -50,7 +50,7 @@ class TokenizerTest {
     }
 
     @Test
-    public void tokenizeSimpleMinusOperation() {
+    void tokenizeSimpleMinusOperation() {
         List<Token> actual = Tokenizer.tokenize("2 - 4");
         List<Token> expected = List.of(
                 new NumberToken("2"),
@@ -62,7 +62,7 @@ class TokenizerTest {
     }
 
     @Test
-    public void tokenizeSimpleMultiplicationOperation() {
+    void tokenizeSimpleMultiplicationOperation() {
         List<Token> actual = Tokenizer.tokenize("2 * 4");
         List<Token> expected = List.of(
                 new NumberToken("2"),
@@ -74,7 +74,7 @@ class TokenizerTest {
     }
 
     @Test
-    public void tokenizeSimpleDivisionOperation() {
+    void tokenizeSimpleDivisionOperation() {
         List<Token> actual = Tokenizer.tokenize("2 / 4");
         List<Token> expected = List.of(
                 new NumberToken("2"),
@@ -86,7 +86,7 @@ class TokenizerTest {
     }
 
     @Test
-    public void tokenizeSimplePowerOperation() {
+    void tokenizeSimplePowerOperation() {
         List<Token> actual = Tokenizer.tokenize("2 ^ 4");
         List<Token> expected = List.of(
                 new NumberToken("2"),
@@ -98,7 +98,7 @@ class TokenizerTest {
     }
 
     @Test
-    public void tokenizeSimpleSquareRootOperation() {
+    void tokenizeSimpleSquareRootOperation() {
         List<Token> actual = Tokenizer.tokenize("sqrt ( 4 )");
         List<Token> expected = List.of(
                 new SquareRootFunction(),
@@ -111,7 +111,7 @@ class TokenizerTest {
     }
 
     @Test
-    public void tokenizeComplexOperation() {
+    void tokenizeComplexOperation() {
         List<Token> expected = new ArrayList<>();
         expected.add(new LeftParenthesisToken());
         expected.add(new SquareRootFunction());
@@ -137,7 +137,7 @@ class TokenizerTest {
     }
 
     @Test
-    public void tokenizeSimplePlusOperationWithFloatingNumbers() {
+    void tokenizeSimplePlusOperationWithFloatingNumbers() {
         List<Token> actual = Tokenizer.tokenize("2.0 + 4.34");
         List<Token> expected = List.of(
                 new NumberToken("2.0"),
@@ -149,7 +149,7 @@ class TokenizerTest {
     }
 
     @Test
-    public void tokenizeSimpleMinusOperationWithFloatingNumbers() {
+    void tokenizeSimpleMinusOperationWithFloatingNumbers() {
         List<Token> actual = Tokenizer.tokenize("2.002 - 4.9");
         List<Token> expected = List.of(
                 new NumberToken("2.002"),
@@ -161,7 +161,7 @@ class TokenizerTest {
     }
 
     @Test
-    public void tokenizeSimpleMultiplicationOperationWithFloatingNumbers() {
+    void tokenizeSimpleMultiplicationOperationWithFloatingNumbers() {
         List<Token> actual = Tokenizer.tokenize("2.9008 * 4.6");
         List<Token> expected = List.of(
                 new NumberToken("2.9008"),
@@ -173,7 +173,7 @@ class TokenizerTest {
     }
 
     @Test
-    public void tokenizeSimpleDivisionOperationWithFloatingNumbers() {
+    void tokenizeSimpleDivisionOperationWithFloatingNumbers() {
         List<Token> actual = Tokenizer.tokenize("2.5058 / 4.862");
         List<Token> expected = List.of(
                 new NumberToken("2.5058"),
@@ -185,7 +185,7 @@ class TokenizerTest {
     }
 
     @Test
-    public void tokenizeSimplePowerOperationWithFloatingNumbers() {
+    void tokenizeSimplePowerOperationWithFloatingNumbers() {
         List<Token> actual = Tokenizer.tokenize("2.9 ^ 4.6");
         List<Token> expected = List.of(
                 new NumberToken("2.9"),
@@ -197,7 +197,7 @@ class TokenizerTest {
     }
 
     @Test
-    public void tokenizeSimpleSquareRootOperationWithFloatingNumbers() {
+    void tokenizeSimpleSquareRootOperationWithFloatingNumbers() {
         List<Token> actual = Tokenizer.tokenize("sqrt ( 4.6 )");
         List<Token> expected = List.of(
                 new SquareRootFunction(),
@@ -210,7 +210,7 @@ class TokenizerTest {
     }
 
     @Test
-    public void tokenizeComplexOperationWithFloatingNumbers() {
+    void tokenizeComplexOperationWithFloatingNumbers() {
         List<Token> expected = new ArrayList<>();
         expected.add(new LeftParenthesisToken());
         expected.add(new SquareRootFunction());
