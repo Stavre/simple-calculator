@@ -3,6 +3,9 @@ on:
   pull_request:
     branches:
       - main
+  push:
+    branches:
+      - main
   workflow_dispatch:
 jobs:
   build:
@@ -31,6 +34,5 @@ jobs:
         run: ./gradlew build
       - name: run unit tests
         run: ./gradlew test
-
-      
-      
+      - name: run jacoco test coverage verification
+        run: ./gradlew jacocoTestCoverageVerification
